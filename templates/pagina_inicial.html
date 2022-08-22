@@ -1,0 +1,255 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<title>Barbearia</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {font-family: "Lato", sans-serif}
+.mySlides {display: none}
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-black w3-card">
+    <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">HOME</a>
+    <a href="#barbearia" class="w3-bar-item w3-button w3-padding-large w3-hide-small">BARBEARIA</a>
+    <a href="#agende" class="w3-bar-item w3-button w3-padding-large w3-hide-small">AGENDE</a>
+    <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hide-small">CONTATO</a>
+    <a href="#localizacao" class="w3-bar-item w3-button w3-padding-large w3-hide-small">ENDEREÇO</a>
+<!--    <div class="w3-dropdown-hover w3-hide-small">-->
+<!--      <button class="w3-padding-large w3-button" title="More">MORE <i class="fa fa-caret-down"></i></button>-->
+<!--&lt;!&ndash;      <div class="w3-dropdown-content w3-bar-block w3-card-4">&ndash;&gt;-->
+<!--&lt;!&ndash;        <a href="#" class="w3-bar-item w3-button">Merchandise</a>&ndash;&gt;-->
+<!--&lt;!&ndash;        <a href="#" class="w3-bar-item w3-button">Extras</a>&ndash;&gt;-->
+<!--&lt;!&ndash;        <a href="#" class="w3-bar-item w3-button">Media</a>&ndash;&gt;-->
+<!--&lt;!&ndash;      </div>&ndash;&gt;-->
+<!--    </div>-->
+<!--    <a href="javascript:void(0)" class="w3-padding-large w3-hover-red w3-hide-small w3-right"><i class="fa fa-search"></i></a>-->
+  </div>
+</div>
+
+<!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
+<div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
+  <a href="#barbearia" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">BARBEARIA</a>
+  <a href="#agende" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">AGENDE</a>
+  <a href="#contato" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">CONTATO</a>
+  <a href="#" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">MERCH</a>
+</div>
+
+<!-- Page content -->
+<div class="w3-content" style="max-width:2000px;margin-top:46px">
+
+  <!-- Automatic Slideshow Images -->
+  <div class="mySlides w3-display-container w3-center">
+    <img src='{% static "inicio.jpg" %}' style="width:60%">
+    <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
+      <h3>Estilo</h3>
+      <p><b>Aqui nao eh so vc que eh lindo o nosso local tambem eh</b></p>
+    </div>
+  </div>
+  <div class="mySlides w3-display-container w3-center">
+    <img src='{% static "inicio2.jpg" %}' style="width:60%">
+    <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
+      <h3>Seja feliz</h3>
+      <p><b>Um lugar para relaxar e sair como uma princesa.</b></p>
+    </div>
+  </div>
+  <div class="mySlides w3-display-container w3-center">
+    <img src='{% static "inicio3.jpg" %}' style="width:30%">
+    <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
+      <h3>Material de Primeira</h3>
+      <p><b>Todos equipamento para seu corte,</b> </p> <b> <p> de machado a maquinha de com formato de dragao</b></p>
+    </div>
+  </div>
+
+  <!-- A BARBEARIA -->
+  <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="barbearia">
+    <h2 class="w3-wide">A BARBEARIA</h2>
+    <p class="w3-opacity"><i>Não é somente um corte de cabelo, é um estilo de vida</i></p>
+    <p class="w3-justify">TextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTexto TextoTextoTextoTextoTexto TextoTexto
+        TextoTextoTextoTextoTexto TextoTextoTextoTexto Texto Texto Texto TextoTextoTextoTextoTexto TextoTexto
+        TextoTexto Texto .</p>
+    <div class="w3-row w3-padding-32">
+      <div class="w3-third">
+        <p>Corte 1</p>
+        <img src='{% static "transferir.jpg" %}' class="w3-round w3-margin-bottom" alt="teste" style="width:60%">
+      </div>
+      <div class="w3-third">
+        <p>Corte 2</p>
+        <img src='{% static "transferir2.jpg" %}' class="w3-round w3-margin-bottom" alt="teste" style="width:60%">
+      </div>
+      <div class="w3-third">
+        <p>Corte 3</p>
+        <img src='{% static "transferir3.jpg" %}' class="w3-round w3-margin-bottom" alt="teste" style="width:60%">
+      </div>
+    </div>
+  </div>
+
+  <!-- Agende -->
+
+  <div class="w3-black" id="agende">
+    <div class="w3-container w3-content w3-padding-64" style="max-width:800px">
+      <h2 class="w3-wide w3-center">Marque um horario</h2>
+      <p class="w3-center"><a href="https://booksy.com/en-br/" target="_blank"><img src='{% static "BooksyLPLogoPNG.png" %}'  alt="teste" style="max-width:300px"></a></p><br>
+
+<!--      <ul class="w3-ul w3-border w3-white w3-text-grey">-->
+<!--        <li class="w3-padding">September <span class="w3-tag w3-red w3-margin-left">Sold out</span></li>-->
+<!--        <li class="w3-padding">October <span class="w3-tag w3-red w3-margin-left">Sold out</span></li>-->
+<!--        <li class="w3-padding">November <span class="w3-badge w3-right w3-margin-right">3</span></li>-->
+<!--      </ul>-->
+
+<!--      <div class="w3-row-padding w3-padding-32" style="margin:0 -16px">-->
+<!--        <div class="w3-third w3-margin-bottom">-->
+<!--          <img src="/w3images/newyork.jpg" alt="New York" style="width:100%" class="w3-hover-opacity">-->
+<!--          <div class="w3-container w3-white">-->
+<!--            <p><b>New York</b></p>-->
+<!--            <p class="w3-opacity">Fri 27 Nov 2016</p>-->
+<!--            <p>Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>-->
+<!--            <button class="w3-button w3-black w3-margin-bottom" onclick="document.getElementById('ticketModal').style.display='block'">Buy Tickets</button>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        <div class="w3-third w3-margin-bottom">-->
+<!--          <img src="/w3images/paris.jpg" alt="Paris" style="width:100%" class="w3-hover-opacity">-->
+<!--          <div class="w3-container w3-white">-->
+<!--            <p><b>Paris</b></p>-->
+<!--            <p class="w3-opacity">Sat 28 Nov 2016</p>-->
+<!--            <p>Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>-->
+<!--            <button class="w3-button w3-black w3-margin-bottom" onclick="document.getElementById('ticketModal').style.display='block'">Buy Tickets</button>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        <div class="w3-third w3-margin-bottom">-->
+<!--          <img src="/w3images/sanfran.jpg" alt="San Francisco" style="width:100%" class="w3-hover-opacity">-->
+<!--          <div class="w3-container w3-white">-->
+<!--            <p><b>San Francisco</b></p>-->
+<!--            <p class="w3-opacity">Sun 29 Nov 2016</p>-->
+<!--            <p>Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>-->
+<!--            <button class="w3-button w3-black w3-margin-bottom" onclick="document.getElementById('ticketModal').style.display='block'">Buy Tickets</button>-->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ticket Modal -->
+<!--  <div id="ticketModal" class="w3-modal">-->
+<!--    <div class="w3-modal-content w3-animate-top w3-card-4">-->
+<!--      <header class="w3-container w3-teal w3-center w3-padding-32">-->
+<!--        <span onclick="document.getElementById('ticketModal').style.display='none'"-->
+<!--       class="w3-button w3-teal w3-xlarge w3-display-topright">×</span>-->
+<!--        <h2 class="w3-wide"><i class="fa fa-suitcase w3-margin-right"></i>Tickets</h2>-->
+<!--      </header>-->
+<!--      <div class="w3-container">-->
+<!--        <p><label><i class="fa fa-shopping-cart"></i> Tickets, $15 per person</label></p>-->
+<!--        <input class="w3-input w3-border" type="text" placeholder="How many?">-->
+<!--        <p><label><i class="fa fa-user"></i> Send To</label></p>-->
+<!--        <input class="w3-input w3-border" type="text" placeholder="Enter email">-->
+<!--        <button class="w3-button w3-block w3-teal w3-padding-16 w3-section w3-right">PAY <i class="fa fa-check"></i></button>-->
+<!--        <button class="w3-button w3-red w3-section" onclick="document.getElementById('ticketModal').style.display='none'">Close <i class="fa fa-remove"></i></button>-->
+<!--        <p class="w3-right">Need <a href="#" class="w3-text-blue">help?</a></p>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+
+  <!-- The Contact Section -->
+  <div class="w3-container w3-content w3-padding-64" style="max-width:800px" id="contact">
+    <h2 class="w3-wide w3-center">Contato</h2>
+    <p class="w3-opacity w3-center"><i>Alguma duvida? fala com a gente</i></p>
+    <div class="w3-row w3-padding-32">
+      <div class="w3-col m6 w3-large w3-margin-bottom">
+        <i class="fa fa-map-marker" style="width:30px"></i> São José dos campos / SP<br>
+        <i class="fa fa-phone" style="width:30px"></i> Contato: (12) 9999-99999<br>
+        <i class="fa fa-envelope" style="width:30px"> </i> Email: mail@mail.com<br>
+      </div>
+      <div class="w3-col m6">
+        <a href="https://api.whatsapp.com/send?phone=5512981298667&text=Ola gostaria de marcar um horario"
+    target="_blank"
+    style="position:fixed;bottom:20px;right:30px;">
+    <svg enable-background="new 0 0 512 512" width="50" height="50" version="1.1" viewBox="0 0 512 512" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><path d="M256.064,0h-0.128l0,0C114.784,0,0,114.816,0,256c0,56,18.048,107.904,48.736,150.048l-31.904,95.104  l98.4-31.456C155.712,496.512,204,512,256.064,512C397.216,512,512,397.152,512,256S397.216,0,256.064,0z" fill="#4CAF50"/><path d="m405.02 361.5c-6.176 17.44-30.688 31.904-50.24 36.128-13.376 2.848-30.848 5.12-89.664-19.264-75.232-31.168-123.68-107.62-127.46-112.58-3.616-4.96-30.4-40.48-30.4-77.216s18.656-54.624 26.176-62.304c6.176-6.304 16.384-9.184 26.176-9.184 3.168 0 6.016 0.16 8.576 0.288 7.52 0.32 11.296 0.768 16.256 12.64 6.176 14.88 21.216 51.616 23.008 55.392 1.824 3.776 3.648 8.896 1.088 13.856-2.4 5.12-4.512 7.392-8.288 11.744s-7.36 7.68-11.136 12.352c-3.456 4.064-7.36 8.416-3.008 15.936 4.352 7.36 19.392 31.904 41.536 51.616 28.576 25.44 51.744 33.568 60.032 37.024 6.176 2.56 13.536 1.952 18.048-2.848 5.728-6.176 12.8-16.416 20-26.496 5.12-7.232 11.584-8.128 18.368-5.568 6.912 2.4 43.488 20.48 51.008 24.224 7.52 3.776 12.48 5.568 14.304 8.736 1.792 3.168 1.792 18.048-4.384 35.52z" fill="#FAFAFA"/></svg>
+</a>
+        <form action="/action_page.php" target="_blank">
+          <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
+            <div class="w3-half">
+              <input class="w3-input w3-border" type="text" placeholder="Nome" required name="Name">
+            </div>
+            <div class="w3-half">
+              <input class="w3-input w3-border" type="text" placeholder="Email" required name="Email">
+            </div>
+          </div>
+          <input class="w3-input w3-border" type="text" placeholder="Messagem" required name="Mensage">
+          <button class="w3-button w3-black w3-section w3-right" type="submit">Enviar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+<!-- End Page Content -->
+</div>
+
+<!-- Image of location/map -->
+
+<div class="w3-white w3-center " id="localizacao">
+  <h2 class="w3-wide w3-center">Endereço</h2>
+    <p class="w3-opacity w3-center"><i>Av. Cassiano Ricardo, s/n - Jardim Aquarius, São José dos Campos - SP, 12246-030</i></p>
+
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d21044.350392460146!2d-45.88648256551078!3d-23.2133915385114!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cc35826ef89157%3A0x8a43331d193eee7b!2sGolden%20Grill%20e%20Pizza!5e0!3m2!1spt-BR!2sbr!4v1661185969725!5m2!1spt-BR!2sbr"
+          width="500" height="375" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+<!--  <img src='{% static "maps.png" %}' class="w3-wide w3-padding-64" style="width:30%">-->
+
+<!-- Footer -->
+<footer class="w3-container w3-padding-64 w3-center w3-opacity w3-light-grey w3-xlarge">
+  <a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook-official w3-hover-opacity"></i></a>
+  <a href="https://www.instagram.com/" target="_blank"><i class=" fa fa-instagram w3-hover-opacity" > </i>
+<!--  <i class="fa fa-snapchat w3-hover-opacity"></i>-->
+<!--  <i class="fa fa-pinterest-p w3-hover-opacity"></i>-->
+<!--  <i class="fa fa-twitter w3-hover-opacity"></i>-->
+<!--  <i class="fa fa-linkedin w3-hover-opacity"></i>-->
+  <p class="w3-medium">Feito por  <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">AMG&ED</a></p>
+</footer>
+
+<script>
+// Automatic Slideshow - change image every 6 seconds
+var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}
+  x[myIndex-1].style.display = "block";
+  setTimeout(carousel, 6000);
+}
+
+// Used to toggle the menu on small screens when clicking on the menu button
+function myFunction() {
+  var x = document.getElementById("navDemo");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else {
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+
+// When the user clicks anywhere outside of the modal, close it
+var modal = document.getElementById('ticketModal');
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+
+</body>
+</html>
