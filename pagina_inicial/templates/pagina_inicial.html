@@ -5,6 +5,12 @@
 <head>
 <title>Barbearia</title>
 <meta charset="UTF-8">
+<!--    cod bootstrap para o carrocel -->
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!--    fim do codigo-->
+
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
@@ -16,15 +22,23 @@ body {font-family: "Lato", sans-serif}
 </head>
 <body>
 
+
+
 <!-- Navbar -->
 <div class="w3-top">
-  <div class="w3-bar w3-black w3-card">
+  <div class=" w3-bar w3-black w3-card">
+
+
+
+
     <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
     <a href="#" class="w3-bar-item w3-button w3-padding-large">HOME</a>
     <a href="#barbearia" class="w3-bar-item w3-button w3-padding-large w3-hide-small">BARBEARIA</a>
     <a href="#agende" class="w3-bar-item w3-button w3-padding-large w3-hide-small">AGENDE</a>
     <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hide-small">CONTATO</a>
     <a href="#localizacao" class="w3-bar-item w3-button w3-padding-large w3-hide-small">ENDEREÇO</a>
+    <img src="\static\logo.jpg "style="width:20%">
+
 <!--    <div class="w3-dropdown-hover w3-hide-small">-->
 <!--      <button class="w3-padding-large w3-button" title="More">MORE <i class="fa fa-caret-down"></i></button>-->
 <!--&lt;!&ndash;      <div class="w3-dropdown-content w3-bar-block w3-card-4">&ndash;&gt;-->
@@ -47,11 +61,7 @@ body {font-family: "Lato", sans-serif}
 
 <!-- Page content -->
 <div class="w3-content w3-black" style="max-width:1600px;margin-top:46px">
-
- <!-- Automatic Slideshow Images -->
-
-
-
+ <!-- Banners automaticos -->
 {% for banner in banners %}
 {% if banner.publicada %}
   <div class="mySlides w3-display-container w3-center">
@@ -64,20 +74,6 @@ body {font-family: "Lato", sans-serif}
 {% endif %}
 {% endfor %}
 </div>
-<!--  <div class="mySlides w3-display-container w3-center">-->
-<!--    <img src='{% static "inicio2.jpg" %}' style="width:60%">-->
-<!--    <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">-->
-<!--      <h3>Seja feliz</h3>-->
-<!--      <p><b>Um lugar para relaxar e sair como uma princesa.</b></p>-->
-<!--    </div>-->
-<!--  </div>-->
-<!--  <div class="mySlides w3-display-container w3-center">-->
-<!--    <img src='{% static "inicio3.jpg" %}' style="width:30%">-->
-<!--    <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">-->
-<!--      <h3>Material de Primeira</h3>-->
-<!--      <p><b>Todos equipamento para seu corte,</b> </p> <b> <p> de machado a maquinha de com formato de dragao</b></p>-->
-<!--    </div>-->
-<!--  </div>-->
 
   <!-- BODY (A BARBEARIA)-->
   {% for body in body %}
@@ -88,6 +84,11 @@ body {font-family: "Lato", sans-serif}
     <p class="w3-justify">{{ body.texto_body }}</p>
 
   {% endfor %}
+    </div>
+  </div>
+
+<!--sem carousel-->
+{% if fotos|length < 4 %}
 
   <div class="w3-row ">
     <div class="w3-container w3-content w3-padding-12 " style="max-width:800px">
@@ -101,18 +102,158 @@ body {font-family: "Lato", sans-serif}
   {% endfor %}
     </div>
   </div>
-<!--      <div class="w3-third">-->
-<!--        <p>Corte 2</p>-->
-<!--        <img src='{% static "transferir2.jpg" %}' class="w3-round w3-margin-bottom" alt="teste" style="width:60%">-->
-<!--      </div>-->
-<!--      <div class="w3-third">-->
-<!--        <p>Corte 3</p>-->
-<!--        <img src='{% static "transferir3.jpg" %}' class="w3-round w3-margin-bottom" alt="teste" style="width:60%">-->
-<!--      </div>-->
+{% else %}
 
+<!------ Carousel ---------->
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+
+<div class="w3-container w3-content w3-center w3-padding-64" style="max-width:2400px" id="carrocel">
+<!------ CSS CODE  ---------->
+
+<style>
+@media (min-width: 500px) {
+
+    /* show 3 items */
+    .carousel-inner .active,
+    .carousel-inner .active + .carousel-item,
+    .carousel-inner .active + .carousel-item + .carousel-item,
+    .carousel-inner .active + .carousel-item + .carousel-item + .carousel-item  {
+        display: block;
+    }
+
+    .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left),
+    .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item,
+    .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item + .carousel-item,
+    .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item + .carousel-item + .carousel-item {
+        transition: none;
+    }
+
+    .carousel-inner .carousel-item-next,
+    .carousel-inner .carousel-item-prev {
+      position: relative;
+      transform: translate3d(0, 0, 0);
+    }
+
+    .carousel-inner .active.carousel-item + .carousel-item + .carousel-item + .carousel-item + .carousel-item {
+        position: absolute;
+        top: 0;
+        right: -25%;
+        z-index: -1;
+        display: block;
+        visibility: visible;
+    }
+
+    /* left or forward direction */
+    .active.carousel-item-left + .carousel-item-next.carousel-item-left,
+    .carousel-item-next.carousel-item-left + .carousel-item,
+    .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item,
+    .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item + .carousel-item,
+    .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item + .carousel-item + .carousel-item {
+        position: relative;
+        transform: translate3d(-100%, 0, 0);
+        visibility: visible;
+    }
+
+    /* farthest right hidden item must be abso position for animations */
+    .carousel-inner .carousel-item-prev.carousel-item-right {
+        position: absolute;
+        top: 0;
+        left: -25%;
+        z-index: -1;
+        display: block;
+        visibility: visible;
+    }
+
+    /* right or prev direction */
+    .active.carousel-item-right + .carousel-item-prev.carousel-item-right,
+    .carousel-item-prev.carousel-item-right + .carousel-item,
+    .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item,
+    .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item + .carousel-item,
+    .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item + .carousel-item + .carousel-item {
+        position: relative;
+        transform: translate3d(100%, 0, 0);
+
+        visibility: visible;
+    }
+
+}
+
+
+ /* Bootstrap Lightbox using Modal */
+
+#profile-grid { overflow: auto; white-space: normal; }
+#profile-grid .profile { padding-bottom: 40px; }
+#profile-grid .panel { padding: 0 }
+#profile-grid .panel-body { padding: 15px }
+#profile-grid .profile-name { font-weight: bold; }
+#profile-grid .thumbnail {margin-bottom:6px;}
+#profile-grid .panel-thumbnail { overflow: hidden; }
+#profile-grid .img-rounded { border-radius: 4px 4px 0 0;}
+
+</style>
+<div class="container" >
+    <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="4000">
+        {% for foto in fotos %}
+        {% if forloop.first %}
+        {% if foto.publicada_body %}
+        <div class="carousel-inner row w-100 mx-auto" role="listbox">
+            <div class="carousel-item col-md-3 active">
+                <div class="panel panel-default">
+                  <div class="panel-thumbnail">
+                    <a href="#" title="inicio" class="thumb">
+                     <img class="img-fluid mx-auto d-block" src="{{ foto.foto_body.url }}" alt="primeiro slide">
+                    </a>
+                  </div>
+                </div>
+            </div>
+        {% endif %}
+
+        {% else %}
+        {% if foto.publicada_body %}
+            <div class="carousel-item col-md-3 ">
+              <div class="panel panel-default">
+                  <div class="panel-thumbnail">
+                    <a href="#" title="image 6" class="thumb">
+                      <img class="img-fluid mx-auto d-block" src="{{ foto.foto_body.url }}" alt="slides em loop">
+                    </a>
+                  </div>
+                </div>
+            </div>
+
+        {% endif %}
+        {% endif %}
+
+
+
+{% if forloop.last %}
+
+<div class="carousel-item col-md-3  ">
+                <div class="panel panel-default">
+                  <div class="panel-thumbnail">
+                    <a href="#" title="image 2" class="thumb">
+                     <img class="img-fluid mx-auto d-block" src="{{ foto.foto_body.url }}" alt="ultimo slide">
+                    </a>
+                  </div>
+
+                </div>
+            </div>
+        </div>
+{% endif %}
+{% endfor %}
+        <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next text-faded" href="#myCarousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
     </div>
-  </div>
-
+</div>
+</div>
 
   <!-- Agende -->
 
@@ -136,25 +277,6 @@ body {font-family: "Lato", sans-serif}
 {% endif %}
 {% endfor %}
 
-  <!-- Ticket Modal -->
-<!--  <div id="ticketModal" class="w3-modal">-->
-<!--    <div class="w3-modal-content w3-animate-top w3-card-4">-->
-<!--      <header class="w3-container w3-teal w3-center w3-padding-32">-->
-<!--        <span onclick="document.getElementById('ticketModal').style.display='none'"-->
-<!--       class="w3-button w3-teal w3-xlarge w3-display-topright">×</span>-->
-<!--        <h2 class="w3-wide"><i class="fa fa-suitcase w3-margin-right"></i>Tickets</h2>-->
-<!--      </header>-->
-<!--      <div class="w3-container">-->
-<!--        <p><label><i class="fa fa-shopping-cart"></i> Tickets, $15 per person</label></p>-->
-<!--        <input class="w3-input w3-border" type="text" placeholder="How many?">-->
-<!--        <p><label><i class="fa fa-user"></i> Send To</label></p>-->
-<!--        <input class="w3-input w3-border" type="text" placeholder="Enter email">-->
-<!--        <button class="w3-button w3-block w3-teal w3-padding-16 w3-section w3-right">PAY <i class="fa fa-check"></i></button>-->
-<!--        <button class="w3-button w3-red w3-section" onclick="document.getElementById('ticketModal').style.display='none'">Close <i class="fa fa-remove"></i></button>-->
-<!--        <p class="w3-right">Need <a href="#" class="w3-text-blue">help?</a></p>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--  </div>-->
 
   <!-- Contato -->
 {% for contato in contatos %}
@@ -174,34 +296,42 @@ body {font-family: "Lato", sans-serif}
     </div>
   </div>
 {% endfor %}
+{% endif %}
 <!-- End Page Content -->
-<a href="https://api.whatsapp.com/send?phone=5512981298667&text=Ola gostaria de marcar um horario"
-    target="_blank"
-    style="position:fixed;bottom:20px;right:30px;">
-    <svg enable-background="new 0 0 512 512" width="50" height="50" version="1.1" viewBox="0 0 512 512" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><path d="M256.064,0h-0.128l0,0C114.784,0,0,114.816,0,256c0,56,18.048,107.904,48.736,150.048l-31.904,95.104  l98.4-31.456C155.712,496.512,204,512,256.064,512C397.216,512,512,397.152,512,256S397.216,0,256.064,0z" fill="#4CAF50"/><path d="m405.02 361.5c-6.176 17.44-30.688 31.904-50.24 36.128-13.376 2.848-30.848 5.12-89.664-19.264-75.232-31.168-123.68-107.62-127.46-112.58-3.616-4.96-30.4-40.48-30.4-77.216s18.656-54.624 26.176-62.304c6.176-6.304 16.384-9.184 26.176-9.184 3.168 0 6.016 0.16 8.576 0.288 7.52 0.32 11.296 0.768 16.256 12.64 6.176 14.88 21.216 51.616 23.008 55.392 1.824 3.776 3.648 8.896 1.088 13.856-2.4 5.12-4.512 7.392-8.288 11.744s-7.36 7.68-11.136 12.352c-3.456 4.064-7.36 8.416-3.008 15.936 4.352 7.36 19.392 31.904 41.536 51.616 28.576 25.44 51.744 33.568 60.032 37.024 6.176 2.56 13.536 1.952 18.048-2.848 5.728-6.176 12.8-16.416 20-26.496 5.12-7.232 11.584-8.128 18.368-5.568 6.912 2.4 43.488 20.48 51.008 24.224 7.52 3.776 12.48 5.568 14.304 8.736 1.792 3.168 1.792 18.048-4.384 35.52z" fill="#FAFAFA"/></svg>
-</a>
 
-<!-- Image of location/map -->
+
+
+<!-- Image of location/map-->
+
+
+
+<!--Endereço-->
 
 <div class="w3-black w3-center " id="localizacao">
   <h2 class="w3-wide w3-center">Endereço</h2>
-    <p class="w3-opacity w3-center"><i>Av. Cassiano Ricardo, s/n <br>
-      Jardim Aquarius, São José dos Campos - SP, <br>
-      12246-030</i></p>
+    <p class="w3-opacity w3-center"><i>Av. Iguape, 848 <br>
+      Jardim Satélite, São José dos Campos - SP, <br>
+      12230-720<br><br> </i></p>
 </div>
 <div class="w3-white w3-center w3-content ">
-  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d21044.350392460146!2d-45.88648256551078!3d-23.2133915385114!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cc35826ef89157%3A0x8a43331d193eee7b!2sGolden%20Grill%20e%20Pizza!5e0!3m2!1spt-BR!2sbr!4v1661185969725!5m2!1spt-BR!2sbr"
-          width="500" height="375" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3666.227970501322!2d-45.893675776174646!3d-23.234789936375716!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cc4be101e3cae1%3A0x19598f907e66b65b!2sASPECTOS%20BARBEARIA%20%7C%20IMAGEM%20MASCULINA!5e0!3m2!1spt-BR!2sbr!4v1661262856454!5m2!1spt-BR!2sbr"
+          width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 <!--  <img src='{% static "maps.png" %}' class="w3-wide w3-padding-64" style="width:30%">-->
 </div>
 <!-- Footer -->
 <footer class="w3-container  w3-padding-8 w3-center w3-opacity w3-light-grey w3-xlarge">
   <a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook-official w3-hover-opacity"></i></a>
-  <a href="https://www.instagram.com/" target="_blank"><i class=" fa fa-instagram w3-hover-opacity" > </i>
+  <a href="https://www.instagram.com/" target="_blank"><i class=" fa fa-instagram w3-hover-opacity" > </i></a>
 
-  <p class="w3-medium w3-content ">Feito por  <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">AMG&ED</a></p>
+  <p class="w3-medium w3-content ">Feito por: <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">AMG&ED</a></p>
+
+
 </footer>
-
+<a href="https://api.whatsapp.com/send?phone=5512981298667&text=Ola gostaria de marcar um horario"
+    target="_blank"
+    style="position:fixed;bottom:20px;right:30px;">
+    <svg enable-background="new 0 0 512 512" width="50" height="50" version="1.1" viewBox="0 0 512 512" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><path d="M256.064,0h-0.128l0,0C114.784,0,0,114.816,0,256c0,56,18.048,107.904,48.736,150.048l-31.904,95.104  l98.4-31.456C155.712,496.512,204,512,256.064,512C397.216,512,512,397.152,512,256S397.216,0,256.064,0z" fill="#4CAF50"/><path d="m405.02 361.5c-6.176 17.44-30.688 31.904-50.24 36.128-13.376 2.848-30.848 5.12-89.664-19.264-75.232-31.168-123.68-107.62-127.46-112.58-3.616-4.96-30.4-40.48-30.4-77.216s18.656-54.624 26.176-62.304c6.176-6.304 16.384-9.184 26.176-9.184 3.168 0 6.016 0.16 8.576 0.288 7.52 0.32 11.296 0.768 16.256 12.64 6.176 14.88 21.216 51.616 23.008 55.392 1.824 3.776 3.648 8.896 1.088 13.856-2.4 5.12-4.512 7.392-8.288 11.744s-7.36 7.68-11.136 12.352c-3.456 4.064-7.36 8.416-3.008 15.936 4.352 7.36 19.392 31.904 41.536 51.616 28.576 25.44 51.744 33.568 60.032 37.024 6.176 2.56 13.536 1.952 18.048-2.848 5.728-6.176 12.8-16.416 20-26.496 5.12-7.232 11.584-8.128 18.368-5.568 6.912 2.4 43.488 20.48 51.008 24.224 7.52 3.776 12.48 5.568 14.304 8.736 1.792 3.168 1.792 18.048-4.384 35.52z" fill="#FAFAFA"/></svg>
+</a>
 <script>
 // Automatic Slideshow - change image every 6 seconds
 var myIndex = 0;
@@ -237,6 +367,52 @@ window.onclick = function(event) {
   }
 }
 </script>
+
+<!------ Script Carrocel Body ---------->
+
+<script language="javascript">
+$('#myCarousel').on('slide.bs.carousel', function (e) {
+
+
+    var $e = $(e.relatedTarget);
+    var idx = $e.index();
+    var itemsPerSlide = 4;
+    var totalItems = $('.carousel-item').length;
+
+    if (idx >= totalItems-(itemsPerSlide-1)) {
+        var it = itemsPerSlide - (totalItems - idx);
+        for (var i=0; i<it; i++) {
+            // append slides to end
+            if (e.direction=="left") {
+                $('.carousel-item').eq(i).appendTo('.carousel-inner');
+            }
+            else {
+                $('.carousel-item').eq(0).appendTo('.carousel-inner');
+            }
+        }
+    }
+});
+
+
+  $('#myCarousel').carousel({
+                interval: 2000
+        });
+
+
+  $(document).ready(function() {
+/* show lightbox when clicking a thumbnail */
+    $('a.thumb').click(function(event){
+      event.preventDefault();
+      var content = $('.modal-body');
+      content.empty();
+        var title = $(this).attr("title");
+        $('.modal-title').html(title);
+        content.html($(this).html());
+        $(".modal-profile").modal({show:true});
+    });
+
+  });
+  </script>
 
 </body>
 </html>
