@@ -4,11 +4,12 @@ from django_filters import filters
 
 
 def home(request):
-    banner = Banner.objects.all()
+    banner = Banner.objects.filter(publicada=True)
     body = Body.objects.all()
-    fotos_body = FotosBody.objects.all()
+    fotos_body = FotosBody.objects.filter(publicada_body=True)
     agende_body = AgendeBody.objects.all()
     contato_body = ContatoBody.objects.all()
+
 
 
     dados = {'banners': banner, 'body': body, 'fotos': fotos_body, 'agende': agende_body,
@@ -17,7 +18,7 @@ def home(request):
     return render(request, 'pagina_inicial.html', dados)
 
 def teste(request):
-    fotos_body = FotosBody.objects.all()
+    fotos_body = FotosBody.objects.filter(publicada_body=True)
 
     dados = {'fotos': fotos_body}
 

@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils.html import mark_safe
 
 class Banner(models.Model):
     titulo = models.CharField(max_length= 100)
@@ -7,6 +8,12 @@ class Banner(models.Model):
     publicada = models.BooleanField(default=False)
     def __str__(self):
         return self.titulo
+
+    @property
+    def banner_preview(self):
+        if self.foto_banner:
+            return mark_safe('<img src="{}" width="300" height="300" />'.format(self.foto_banner.url))
+        return ""
 
 class Body(models.Model):
     titulo_body = models.CharField(max_length= 100)
@@ -22,6 +29,12 @@ class FotosBody(models.Model):
     publicada_body = models.BooleanField(default=False)
     def __str__(self):
         return self.titulo_foto_body
+
+    @property
+    def body_preview(self):
+        if self.foto_body:
+            return mark_safe('<img src="{}" width="300" height="300" />'.format(self.foto_body.url))
+        return ""
 
 class AgendeBody(models.Model):
     titulo_agende = models.CharField(max_length= 100)
