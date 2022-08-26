@@ -14,6 +14,8 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
 <style>
 body {font-family: "Lato", sans-serif}
 .mySlides {display: none}
@@ -25,32 +27,33 @@ body {font-family: "Lato", sans-serif}
 
 <!-- Navbar -->
 <div class="w3-top">
-  <div class=" w3-bar w3-black w3-card">
+    <div class=" w3-bar w3-black w3-card w3-padding-large">
+
+    <a class="w3-bar-item w3-button w3-padding-large  w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Menu"><i class="fa fa-bars"></i></a>
+    <img href="#" class="w3-bar-item " src="\static\logo3.png" style="width:50%">
 
 
+        <div  class="btn-group-lg w3-right" role="group" aria-label="Basic example" style="  margin-top:46px">
+    <a href="#barbearia" class="w3-bar-item w3-button w3-hide-medium  w3-hide-small w3-right">BARBEARIA</a>
+    <a href="#agende" class="w3-bar-item w3-button  w3-hide-medium w3-hide-small w3-right">AGENDE</a>
+    <a href="#contato" class="w3-bar-item w3-button  w3-hide-medium w3-hide-small w3-right">CONTATO</a>
+    <a href="#localizacao" class="w3-bar-item w3-button w3-hide-medium w3-hide-small w3-right">ENDEREÇO</a>
 
-
-    <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-    <a href="#" class="w3-bar-item w3-button w3-padding-large">HOME</a>
-    <a href="#barbearia" class="w3-bar-item w3-button w3-padding-large w3-hide-small">BARBEARIA</a>
-    <a href="#agende" class="w3-bar-item w3-button w3-padding-large w3-hide-small">AGENDE</a>
-    <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hide-small">CONTATO</a>
-    <a href="#localizacao" class="w3-bar-item w3-button w3-padding-large w3-hide-small">ENDEREÇO</a>
-    <img src="\static\logo.jpg "style="width:20%">
+     </div>
 
   </div>
 </div>
 
-<!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
-<div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
+<!-- Navbar celular (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
+<div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large  w3-top w3-right" style="margin-top:46px">
   <a href="#barbearia" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">BARBEARIA</a>
   <a href="#agende" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">AGENDE</a>
   <a href="#contato" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">CONTATO</a>
-  <a href="#" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">MERCH</a>
+  <a href="#localizacao" class="w3-bar-item w3-button w3-padding-large">ENDEREÇO</a>
 </div>
 
 <!-- Page content -->
-<div class="w3-black w3-xlarge " style="margin-top:46px">
+<div class="w3-black w3-xlarge " style="margin-top:70px">
  <!-- Banners automaticos -->
 {% for banner in banners %}
 
@@ -313,17 +316,17 @@ $('#carousel').on('slide.bs.carousel', function (e) {
 
 {% for item in agende %}
 {% if agende %}
-  <div class="w3-black w3-xlarge " id="agende">
-    <div class="w3-container w3-content w3-padding-32" style="max-width:1600px">
+  <div class="w3-black w3-xlarge responsive " style="margin-top:30px" id="agende">
+    <div class="w3-container w3-content w3-padding-32" style="max-width:1600px margin-top:100px">
       <h2 class="w3-wide w3-center">{{ item.titulo_agende }}</h2>
-      <p class="w3-center"><a href={{item.link_agende}} target="_blank"><img src={{item.foto_agende.url}}  alt="teste" style="max-width:300px"></a></p><br>
+      <p class="w3-center"><a class="w3-center" href={{item.link_agende}} target="_blank"><img src={{item.foto_agende.url}}  alt="teste" style="max-width:300px "></a></p><br>
     </div>
   </div>
 
 {% else %}
 
   <div class="w3-black w3-xlarge " id="agende">
-    <div class="w3-container w3-content w3-padding-32" style="max-width:1600px">
+    <div class="w3-container w3-content w3-padding-32" style="max-width:1600px margin-top:46px">
       <h2 class="w3-wide w3-center">Agende um horario:</h2>
       <p class="w3-center"><a href="https://booksy.com/pt-br/175238_aspectos-imagem-masculina_cabelo_1026706_sao-jose-dos-campos#ba_s=sh_1" target="_blank"><img src='{% static "BooksyLPLogoPNG.png" %}'  alt="teste" style="max-width:300px"></a></p><br>
     </div>
@@ -334,7 +337,7 @@ $('#carousel').on('slide.bs.carousel', function (e) {
 
   <!-- Contato -->
 {% for contato in contatos %}
-  <div class="w3-container w3-content w3-padding-32 " style="max-width:800px" id="contact">
+  <div class="w3-container w3-content w3-padding-32 " style="max-width:800px" id="contato">
     <h2 class="w3-wide w3-center">{{ contato.titulo_contato }}</h2>
     <p class="w3-opacity w3-center"><i>{{ contato.subtitulo_contato }}</i></p>
     <div class="w3-row w3-padding-12">
