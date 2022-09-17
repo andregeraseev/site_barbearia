@@ -29,7 +29,7 @@ body {font-family: "Lato", sans-serif}
 <body id="inicio">
 
 
-<!--margem para ancoraas-->
+<!--margem para ancoraas e desliza devagar-->
 <style>
             html {
   scroll-behavior: smooth;
@@ -41,65 +41,11 @@ body {font-family: "Lato", sans-serif}
 </style>
 
 <!-- Navbar -->
-<div class="w3-top d-flex " style="z-index:10">
-
-    <div class="w3-bar w3-black w3-card w3-padding-large align-middle">
-        <div class="col-6">
-            <img class="w3-bar-item w3-hide-medium  w3-hide-small" src="\static\logo3.png" style="width:100%">
-
-        </div>
-        <div class="col-10 ">
-            <img class="w3-bar-item w3-hide-large " src="\static\logo3.png" style="width:100%">
-        </div>
-        <a class="w3-bar-item w3-button w3-padding-large  w3-hide-large w3-right col-2" href="javascript:void(0)"
-           onclick="myFunction()" title="Menu"><i class="fa fa-bars"></i></a>
-
-
-        <div class="btn-group-lg w3-right col-6 " role="group" aria-label="Basic example">
-            <div class="container">
-                <a href="#inicio" class="w3-bar-item w3-button w3-hide-medium  w3-hide-small w3-right"
-                   style="margin-top:46px">INICIO</a>
-                <a href="#barbearia" class="w3-bar-item w3-button w3-hide-medium  w3-hide-small w3-right "
-                   style="margin-top:46px">BARBEARIA</a>
-                <a href="#agende" class="w3-bar-item w3-button  w3-hide-medium w3-hide-small w3-right"
-                   style="margin-top:46px">AGENDE</a>
-                <a href="#contato" class="w3-bar-item w3-button  w3-hide-medium w3-hide-small w3-right"
-                   style="margin-top:46px">CONTATO</a>
-                <a href="#localizacao" class="w3-bar-item w3-button w3-hide-medium w3-hide-small w3-right"
-                   style="margin-top:46px">ENDEREÇO</a>
-            </div>
-
-        </div>
-    </div>
-</div>
-
-<!-- Navbar celular (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
-<div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large  w3-top w3-right"
-     style="margin-top:80px ; z-index:10">
-    <a href="#inicio" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">INICIO</a>
-    <a href="#barbearia" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">BARBEARIA</a>
-    <a href="#agende" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">AGENDE</a>
-    <a href="#contato" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">CONTATO</a>
-    <a href="#localizacao" class="w3-bar-item w3-button w3-padding-large">ENDEREÇO</a>
-
-</div>
-</div>
+{% include 'partials/_navbar.html' %}
 <!-- Page content -->
 <div class="w3-black w3-xlarge " style="margin-top:70px">
     <!-- Banners automaticos -->
-    {% for banner in banners %}
-
-    <div class="mySlides w3-display-container w3-center">
-        <img src='{{ banner.foto_banner.url }}' style="width:60%">
-        <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
-            <h3>{{banner.titulo}}</h3>
-            <p><b>{{banner.texto}}</b></p>
-
-        </div>
-
-    </div>
-
-    {% endfor %}
+{% include 'partials/_banner_inicial.html' %}
 </div>
 
 <!-- BODY (A BARBEARIA)-->
@@ -115,139 +61,15 @@ body {font-family: "Lato", sans-serif}
 </div>
 
 
-<!--FOTO_BODY-->
-
-<!--Tag Carrocel -->
-
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
-        crossorigin="anonymous"></script>
 
 
-<!-- CSS carrocel -->
-
-<link rel="stylesheet" href="{% static 'css/carrocel.css' %}">
-
-<!-- FIM CSS-->
-<!--Carrocel para no minimo duas imagens-->
-
-<div class="row d-flex justify-content-center">
-    <div class="col-md-12">
-        <div class="top-content">
-            <div class="container-fluid">
-                <div id="carousel" class="carousel slide" data-ride="carousel">
-                    <div class="carousel-inner row w-100 mx-auto" role="listbox">
-                        {% for foto in fotos %}
-                        {% if forloop.first %}
-                        <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3 active">
-                            <img src="{{ foto.foto_body.url }}" class="img-fluid mx-auto d-block"
-                                 alt="{{ foto.titulo_foto_body }}">
-                        </div>
-                        {% else %}
-                        <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
-                            <img src="{{ foto.foto_body.url }}" class="img-fluid mx-auto d-block"
-                                 alt="{{ foto.titulo_foto_body }}">
-                        </div>
-                        {% endif %}
-                        {% endfor %}
-                        {% if fotos|length < 6 %}
-                        {% for foto in fotos %}
-                        <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
-                            <img src="{{ foto.foto_body.url }}" class="img-fluid mx-auto d-block"
-                                 alt="{{ foto.titulo_foto_body }}">
-                        </div>
-                        {% endfor %}
-                        {% endif %}
-                        {% if fotos|length < 3 %}
-                        {% for foto in fotos %}
-                        <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
-                            <img src="{{ foto.foto_body.url }}" class="img-fluid mx-auto d-block"
-                                 alt="{{ foto.titulo_foto_body }}">
-                        </div>
-                        {% endfor %}
-                        {% endif %}
-                        {% if fotos|length < 2 %}
-                        {% for foto in fotos %}
-                        <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
-                            <img src="{{ foto.foto_body.url }}" class="img-fluid mx-auto d-block"
-                                 alt="{{ foto.titulo_foto_body }}">
-                        </div>
-
-                        {% endfor %}
-                        {% endif %}
-                    </div>
-                    <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<script src="{% static 'js/carrocelini.js' %}"></script>
-
-<!--Fim Carrocel-->
-
+<!--Carrocel -->
+{% include 'partials/_carrocel_4.html' %}
 
 <!-- Agende -->
-
-{% for item in agende %}
-{% if agende %}
-<div class="anchor-link w3-black w3-xlarge responsive " style="margin-top:30px" id="agende">
-    <div class="w3-container w3-content w3-padding-32" style="max-width:1600px margin-top:100px">
-        <h2 class="w3-wide w3-center" href={{item.link_agende}}>{{ item.titulo_agende }}</h2>
-        <p class="w3-center"><a class="w3-center" href={{item.link_agende}} target="_blank"><img
-                src={{item.foto_agende.url}} alt="teste" style="max-width:300px "></a></p><br>
-    </div>
-</div>
-
-{% else %}
-
-<div class=" anchor-link w3-black w3-xlarge " id="agende">
-    <div class="w3-container w3-content w3-padding-32" style="max-width:1600px margin-top:46px">
-        <h2 class="w3-wide w3-center">Agende um horario:</h2>
-        <p class="w3-center"><a
-                href="https://booksy.com/pt-br/175238_aspectos-imagem-masculina_cabelo_1026706_sao-jose-dos-campos#ba_s=sh_1"
-                target="_blank"><img src='{% static "BooksyLPLogoPNG.png" %}' alt="teste" style="max-width:300px"></a>
-        </p><br>
-    </div>
-</div>
-{% endif %}
-{% endfor %}
-
-
+{% include 'partials/_agende.html' %}
 <!-- Contato -->
-{% for contato in contatos %}
-<div class="anchor-link w3-container w3-content w3-padding-32 " style="max-width:800px" id="contato">
-    <h2 class="w3-wide w3-center">{{ contato.titulo_contato }}</h2>
-    <p class="w3-opacity w3-center"><i>{{ contato.subtitulo_contato }}</i></p>
-    <div class="w3-row w3-padding-12">
-        <div class="w3-col m12 w3-large w3-center w3-margin-bottom">
-            <i class="fa fa-map-marker w3-center" style="width:30px"></i>{{ contato.cidade_contato }}<br>
-            <i class="fa fa-phone w3-center" style="width:30px"></i> Contato: {{ contato.telefone_contato }}<br>
-            <i class="fa fa-envelope w3-center" style="width:30px"> </i> Email: {{ contato.email_contato }}<br>
-        </div>
-        <div class="w3-col m6 ">
-
-
-        </div>
-    </div>
-</div>
-{% endfor %}
-
-<!-- End Page Content -->
-
-
-<!-- Image of location/map-->
+{% include 'partials/_contato.html' %}
 
 
 <!--Endereço-->
@@ -258,6 +80,7 @@ body {font-family: "Lato", sans-serif}
         Jardim Satélite, São José dos Campos - SP, <br>
         12230-720<br><br> </i></p>
 </div>
+<!-- Mapa-->
 <div class="row d-flex justify-content-center">
 
     <iframe class="col-lg-6 col-md-6 col-sm-6"
@@ -274,11 +97,13 @@ body {font-family: "Lato", sans-serif}
     <a href="https://www.instagram.com/aspectussalon/" target="_blank"><i
             class=" fa fa-instagram w3-hover-opacity"> </i></a>
 
-    <p class="w3-medium w3-content ">Feito por: <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">AMG&ED</a>
+    <p class="w3-medium w3-content ">Feito por: <a href="https://www.linkedin.com/in/andregeraseev/" target="_blank">Ageraseev</a>
     </p>
 
 
 </footer>
+
+<!--Whatsapp Fixo-->
 <a href="https://api.whatsapp.com/send?phone=5512982853401&text=Olá! Gostaria de marcar um horario"
    target="_blank"
    style="position:fixed;bottom:20px;right:30px; z-index:10">
@@ -287,15 +112,13 @@ body {font-family: "Lato", sans-serif}
         <path d="m405.02 361.5c-6.176 17.44-30.688 31.904-50.24 36.128-13.376 2.848-30.848 5.12-89.664-19.264-75.232-31.168-123.68-107.62-127.46-112.58-3.616-4.96-30.4-40.48-30.4-77.216s18.656-54.624 26.176-62.304c6.176-6.304 16.384-9.184 26.176-9.184 3.168 0 6.016 0.16 8.576 0.288 7.52 0.32 11.296 0.768 16.256 12.64 6.176 14.88 21.216 51.616 23.008 55.392 1.824 3.776 3.648 8.896 1.088 13.856-2.4 5.12-4.512 7.392-8.288 11.744s-7.36 7.68-11.136 12.352c-3.456 4.064-7.36 8.416-3.008 15.936 4.352 7.36 19.392 31.904 41.536 51.616 28.576 25.44 51.744 33.568 60.032 37.024 6.176 2.56 13.536 1.952 18.048-2.848 5.728-6.176 12.8-16.416 20-26.496 5.12-7.232 11.584-8.128 18.368-5.568 6.912 2.4 43.488 20.48 51.008 24.224 7.52 3.776 12.48 5.568 14.304 8.736 1.792 3.168 1.792 18.048-4.384 35.52z"
               fill="#FAFAFA"/></svg>
 </a>
-<script src="{% static 'js/carrocel.js' %}">
 
-</script>
+
+<script src="{% static 'js/carrocel.js' %}"></script>
 
 <!------ Script Carrocel Body ---------->
 
-<script src="{% static 'js/carrocel1_temporizador.js' %}">
-
-</script>
+<script src="{% static 'js/carrocel1_temporizador.js' %}"></script>
 
 </body>
 </html>
