@@ -1,229 +1,136 @@
-{% load static %}
-
 <!DOCTYPE html>
+{% load static %}
 <html lang="pt">
 <head>
-<title>Barbearia</title>
-<meta charset="UTF-8">
-<!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <title>Aspectus Male Image</title>
+    <meta charset="UTF-8">
 
-<!--    fim do codigo-->
+    <!- SEO -->
+    <meta name="Barbearia Aspectus" content="Barbearia especializada em corte de cabelos e barba masculino"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+          integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link href="grid/simple-grid.min.css" rel="stylesheet">
+    <!--w3-scoll CSS-->
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
-<style>
+    <style>
 body {font-family: "Lato", sans-serif}
 .mySlides {display: none}
-</style>
+
+    </style>
 </head>
-<body>
+<body id="inicio">
 
 
+<!--margem para ancoraas-->
+<style>
+            html {
+  scroll-behavior: smooth;
+}
+.anchor-link {
+  scroll-margin: 150px;
+}
+
+</style>
 
 <!-- Navbar -->
-<div class="w3-top">
-    <div class=" w3-bar w3-black w3-card w3-padding-large">
+<div class="w3-top d-flex " style="z-index:10">
 
-    <a class="w3-bar-item w3-button w3-padding-large  w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Menu"><i class="fa fa-bars"></i></a>
-    <img href="#" class="w3-bar-item " src="\static\logo3.png" style="width:50%">
+    <div class="w3-bar w3-black w3-card w3-padding-large align-middle">
+        <div class="col-6">
+            <img class="w3-bar-item w3-hide-medium  w3-hide-small" src="\static\logo3.png" style="width:100%">
+
+        </div>
+        <div class="col-10 ">
+            <img class="w3-bar-item w3-hide-large " src="\static\logo3.png" style="width:100%">
+        </div>
+        <a class="w3-bar-item w3-button w3-padding-large  w3-hide-large w3-right col-2" href="javascript:void(0)"
+           onclick="myFunction()" title="Menu"><i class="fa fa-bars"></i></a>
 
 
-        <div  class="btn-group-lg w3-right" role="group" aria-label="Basic example" style="  margin-top:46px">
-    <a href="#barbearia" class="w3-bar-item w3-button w3-hide-medium  w3-hide-small w3-right">BARBEARIA</a>
-    <a href="#agende" class="w3-bar-item w3-button  w3-hide-medium w3-hide-small w3-right">AGENDE</a>
-    <a href="#contato" class="w3-bar-item w3-button  w3-hide-medium w3-hide-small w3-right">CONTATO</a>
-    <a href="#localizacao" class="w3-bar-item w3-button w3-hide-medium w3-hide-small w3-right">ENDEREÇO</a>
+        <div class="btn-group-lg w3-right col-6 " role="group" aria-label="Basic example">
+            <div class="container">
+                <a href="#inicio" class="w3-bar-item w3-button w3-hide-medium  w3-hide-small w3-right"
+                   style="margin-top:46px">INICIO</a>
+                <a href="#barbearia" class="w3-bar-item w3-button w3-hide-medium  w3-hide-small w3-right "
+                   style="margin-top:46px">BARBEARIA</a>
+                <a href="#agende" class="w3-bar-item w3-button  w3-hide-medium w3-hide-small w3-right"
+                   style="margin-top:46px">AGENDE</a>
+                <a href="#contato" class="w3-bar-item w3-button  w3-hide-medium w3-hide-small w3-right"
+                   style="margin-top:46px">CONTATO</a>
+                <a href="#localizacao" class="w3-bar-item w3-button w3-hide-medium w3-hide-small w3-right"
+                   style="margin-top:46px">ENDEREÇO</a>
+            </div>
 
-     </div>
-
-  </div>
+        </div>
+    </div>
 </div>
 
 <!-- Navbar celular (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
-<div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large  w3-top w3-right" style="margin-top:46px">
-  <a href="#barbearia" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">BARBEARIA</a>
-  <a href="#agende" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">AGENDE</a>
-  <a href="#contato" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">CONTATO</a>
-  <a href="#localizacao" class="w3-bar-item w3-button w3-padding-large">ENDEREÇO</a>
-</div>
+<div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large  w3-top w3-right"
+     style="margin-top:80px ; z-index:10">
+    <a href="#inicio" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">INICIO</a>
+    <a href="#barbearia" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">BARBEARIA</a>
+    <a href="#agende" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">AGENDE</a>
+    <a href="#contato" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">CONTATO</a>
+    <a href="#localizacao" class="w3-bar-item w3-button w3-padding-large">ENDEREÇO</a>
 
+</div>
+</div>
 <!-- Page content -->
 <div class="w3-black w3-xlarge " style="margin-top:70px">
- <!-- Banners automaticos -->
-{% for banner in banners %}
+    <!-- Banners automaticos -->
+    {% for banner in banners %}
 
-  <div class="mySlides w3-display-container w3-center">
-    <img src='{{ banner.foto_banner.url }}' style="width:60%">
-    <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
-      <h3>{{banner.titulo}}</h3>
-      <p><b>{{banner.texto}}</b></p>
+    <div class="mySlides w3-display-container w3-center">
+        <img src='{{ banner.foto_banner.url }}' style="width:60%">
+        <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
+            <h3>{{banner.titulo}}</h3>
+            <p><b>{{banner.texto}}</b></p>
+
+        </div>
+
     </div>
-  </div>
 
-{% endfor %}
+    {% endfor %}
 </div>
 
-  <!-- BODY (A BARBEARIA)-->
-  {% for body in body %}
+<!-- BODY (A BARBEARIA)-->
+{% for body in body %}
 
-  <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="barbearia">
+<div class="anchor-link w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="barbearia">
     <h2 class="w3-wide">{{ body.titulo_body}}</h2>
     <p class="w3-opacity"><i>{{ body.subtitulo_body }}</i></p>
     <p class="w3-justify">{{ body.texto_body }}</p>
 
-  {% endfor %}
-    </div>
-  </div>
-
+    {% endfor %}
+</div>
+</div>
 
 
 <!--FOTO_BODY-->
 
 <!--Tag Carrocel -->
 
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+        crossorigin="anonymous"></script>
 
 
 <!-- CSS carrocel -->
-<style>
-/*
-    code by Iatek LLC 2018 - CC 2.0 License - Attribution required
-    code customized by Azmind.com
-*/
-@media (min-width: 768px) and (max-width: 991px) {
-    /* Show 4th slide on md if col-md-4*/
-    .carousel-inner .active.col-md-4.carousel-item + .carousel-item + .carousel-item + .carousel-item {
-        position: absolute;
-        top: 0;
-        right: -33.3333%;  /*change this with javascript in the future*/
-        z-index: -1;
-        display: block;
-        visibility: visible;
-    }
-}
-@media (min-width: 576px) and (max-width: 768px) {
-    /* Show 3rd slide on sm if col-sm-6*/
-    .carousel-inner .active.col-sm-6.carousel-item + .carousel-item + .carousel-item {
-        position: absolute;
-        top: 0;
-        right: -50%;  /*change this with javascript in the future*/
-        z-index: -1;
-        display: block;
-        visibility: visible;
-    }
-}
-@media (min-width: 576px) {
-    .carousel-item {
-        margin-right: 0;
-    }
-    /* show 2 items */
-    .carousel-inner .active + .carousel-item {
-        display: block;
-    }
-    .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left),
-    .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item {
-        transition: none;
-    }
-    .carousel-inner .carousel-item-next {
-        position: relative;
-        transform: translate3d(0, 0, 0);
-    }
-    /* left or forward direction */
-    .active.carousel-item-left + .carousel-item-next.carousel-item-left,
-    .carousel-item-next.carousel-item-left + .carousel-item,
-    .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item {
-        position: relative;
-        transform: translate3d(-100%, 0, 0);
-        visibility: visible;
-    }
-    /* farthest right hidden item must be also positioned for animations */
-    .carousel-inner .carousel-item-prev.carousel-item-right {
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: -1;
-        display: block;
-        visibility: visible;
-    }
-    /* right or prev direction */
-    .active.carousel-item-right + .carousel-item-prev.carousel-item-right,
-    .carousel-item-prev.carousel-item-right + .carousel-item,
-    .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item {
-        position: relative;
-        transform: translate3d(100%, 0, 0);
-        visibility: visible;
-        display: block;
-        visibility: visible;
-    }
-}
-/* MD */
-@media (min-width: 768px) {
-    /* show 3rd of 3 item slide */
-    .carousel-inner .active + .carousel-item + .carousel-item {
-        display: block;
-    }
-    .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item + .carousel-item {
-        transition: none;
-    }
-    .carousel-inner .carousel-item-next {
-        position: relative;
-        transform: translate3d(0, 0, 0);
-    }
-    /* left or forward direction */
-    .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item + .carousel-item {
-        position: relative;
-        transform: translate3d(-100%, 0, 0);
-        visibility: visible;
-    }
-    /* right or prev direction */
-    .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item + .carousel-item {
-        position: relative;
-        transform: translate3d(100%, 0, 0);
-        visibility: visible;
-        display: block;
-        visibility: visible;
-    }
-}
-/* LG */
-@media (min-width: 991px) {
-    /* show 4th item */
-    .carousel-inner .active + .carousel-item + .carousel-item + .carousel-item {
-        display: block;
-    }
-    .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item + .carousel-item + .carousel-item {
-        transition: none;
-    }
-    /* Show 5th slide on lg if col-lg-3 */
-    .carousel-inner .active.col-lg-3.carousel-item + .carousel-item + .carousel-item + .carousel-item + .carousel-item {
-        position: absolute;
-        top: 0;
-        right: -25%;  /*change this with javascript in the future*/
-        z-index: -1;
-        display: block;
-        visibility: visible;
-    }
-    /* left or forward direction */
-    .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item + .carousel-item + .carousel-item {
-        position: relative;
-        transform: translate3d(-100%, 0, 0);
-        visibility: visible;
-    }
-    /* right or prev direction //t - previous slide direction last item animation fix */
-    .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item + .carousel-item + .carousel-item {
-        position: relative;
-        transform: translate3d(100%, 0, 0);
-        visibility: visible;
-        display: block;
-        visibility: visible;
-    }
-}
-</style>
+
+<link rel="stylesheet" href="{% static 'css/carrocel.css' %}">
+
 <!-- FIM CSS-->
 <!--Carrocel para no minimo duas imagens-->
 
@@ -236,32 +143,37 @@ body {font-family: "Lato", sans-serif}
                         {% for foto in fotos %}
                         {% if forloop.first %}
                         <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3 active">
-                            <img src="{{ foto.foto_body.url }}" class="img-fluid mx-auto d-block" alt="{{ foto.titulo_foto_body }}">
+                            <img src="{{ foto.foto_body.url }}" class="img-fluid mx-auto d-block"
+                                 alt="{{ foto.titulo_foto_body }}">
                         </div>
                         {% else %}
                         <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
-                            <img src="{{ foto.foto_body.url }}" class="img-fluid mx-auto d-block" alt="{{ foto.titulo_foto_body }}">
+                            <img src="{{ foto.foto_body.url }}" class="img-fluid mx-auto d-block"
+                                 alt="{{ foto.titulo_foto_body }}">
                         </div>
                         {% endif %}
                         {% endfor %}
                         {% if fotos|length < 6 %}
                         {% for foto in fotos %}
                         <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
-                            <img src="{{ foto.foto_body.url }}" class="img-fluid mx-auto d-block" alt="{{ foto.titulo_foto_body }}">
+                            <img src="{{ foto.foto_body.url }}" class="img-fluid mx-auto d-block"
+                                 alt="{{ foto.titulo_foto_body }}">
                         </div>
                         {% endfor %}
                         {% endif %}
                         {% if fotos|length < 3 %}
                         {% for foto in fotos %}
                         <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
-                            <img src="{{ foto.foto_body.url }}" class="img-fluid mx-auto d-block" alt="{{ foto.titulo_foto_body }}">
+                            <img src="{{ foto.foto_body.url }}" class="img-fluid mx-auto d-block"
+                                 alt="{{ foto.titulo_foto_body }}">
                         </div>
                         {% endfor %}
                         {% endif %}
                         {% if fotos|length < 2 %}
                         {% for foto in fotos %}
                         <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
-                            <img src="{{ foto.foto_body.url }}" class="img-fluid mx-auto d-block" alt="{{ foto.titulo_foto_body }}">
+                            <img src="{{ foto.foto_body.url }}" class="img-fluid mx-auto d-block"
+                                 alt="{{ foto.titulo_foto_body }}">
                         </div>
 
                         {% endfor %}
@@ -281,198 +193,109 @@ body {font-family: "Lato", sans-serif}
     </div>
 </div>
 
-<script>
-  /*
-    Carousel
-*/
-$('#carousel').on('slide.bs.carousel', function (e) {
-    /*
-        CC 2.0 License Iatek LLC 2018 - Attribution required
-    */
-    var $e = $(e.relatedTarget);
-    var idx = $e.index();
-    var itemsPerSlide = 5;
-    var totalItems = $('.carousel-item').length;
-
-    if (idx >= totalItems-(itemsPerSlide-1)) {
-        var it = itemsPerSlide - (totalItems - idx);
-        for (var i=0; i<it; i++) {
-            // append slides to end
-            if (e.direction=="left") {
-                $('.carousel-item').eq(i).appendTo('.carousel-inner');
-            }
-            else {
-                $('.carousel-item').eq(0).appendTo('.carousel-inner');
-            }
-        }
-    }
-});
-</script>
+<script src="{% static 'js/carrocelini.js' %}"></script>
 
 <!--Fim Carrocel-->
 
 
-  <!-- Agende -->
+<!-- Agende -->
 
 {% for item in agende %}
 {% if agende %}
-  <div class="w3-black w3-xlarge responsive " style="margin-top:30px" id="agende">
+<div class="anchor-link w3-black w3-xlarge responsive " style="margin-top:30px" id="agende">
     <div class="w3-container w3-content w3-padding-32" style="max-width:1600px margin-top:100px">
-      <h2 class="w3-wide w3-center">{{ item.titulo_agende }}</h2>
-      <p class="w3-center"><a class="w3-center" href={{item.link_agende}} target="_blank"><img src={{item.foto_agende.url}}  alt="teste" style="max-width:300px "></a></p><br>
+        <h2 class="w3-wide w3-center" href={{item.link_agende}}>{{ item.titulo_agende }}</h2>
+        <p class="w3-center"><a class="w3-center" href={{item.link_agende}} target="_blank"><img
+                src={{item.foto_agende.url}} alt="teste" style="max-width:300px "></a></p><br>
     </div>
-  </div>
+</div>
 
 {% else %}
 
-  <div class="w3-black w3-xlarge " id="agende">
+<div class=" anchor-link w3-black w3-xlarge " id="agende">
     <div class="w3-container w3-content w3-padding-32" style="max-width:1600px margin-top:46px">
-      <h2 class="w3-wide w3-center">Agende um horario:</h2>
-      <p class="w3-center"><a href="https://booksy.com/pt-br/175238_aspectos-imagem-masculina_cabelo_1026706_sao-jose-dos-campos#ba_s=sh_1" target="_blank"><img src='{% static "BooksyLPLogoPNG.png" %}'  alt="teste" style="max-width:300px"></a></p><br>
+        <h2 class="w3-wide w3-center">Agende um horario:</h2>
+        <p class="w3-center"><a
+                href="https://booksy.com/pt-br/175238_aspectos-imagem-masculina_cabelo_1026706_sao-jose-dos-campos#ba_s=sh_1"
+                target="_blank"><img src='{% static "BooksyLPLogoPNG.png" %}' alt="teste" style="max-width:300px"></a>
+        </p><br>
     </div>
-  </div>
+</div>
 {% endif %}
 {% endfor %}
 
 
-  <!-- Contato -->
+<!-- Contato -->
 {% for contato in contatos %}
-  <div class="w3-container w3-content w3-padding-32 " style="max-width:800px" id="contato">
+<div class="anchor-link w3-container w3-content w3-padding-32 " style="max-width:800px" id="contato">
     <h2 class="w3-wide w3-center">{{ contato.titulo_contato }}</h2>
     <p class="w3-opacity w3-center"><i>{{ contato.subtitulo_contato }}</i></p>
     <div class="w3-row w3-padding-12">
-      <div class="w3-col m12 w3-large w3-center w3-margin-bottom">
-        <i class="fa fa-map-marker w3-center" style="width:30px"></i>{{ contato.cidade_contato }}<br>
-        <i class="fa fa-phone w3-center" style="width:30px"></i> Contato: {{ contato.telefone_contato }}<br>
-        <i class="fa fa-envelope w3-center" style="width:30px"> </i> Email: {{ contato.email_contato }}<br>
-      </div>
-      <div class="w3-col m6 ">
+        <div class="w3-col m12 w3-large w3-center w3-margin-bottom">
+            <i class="fa fa-map-marker w3-center" style="width:30px"></i>{{ contato.cidade_contato }}<br>
+            <i class="fa fa-phone w3-center" style="width:30px"></i> Contato: {{ contato.telefone_contato }}<br>
+            <i class="fa fa-envelope w3-center" style="width:30px"> </i> Email: {{ contato.email_contato }}<br>
+        </div>
+        <div class="w3-col m6 ">
 
 
-      </div>
+        </div>
     </div>
-  </div>
+</div>
 {% endfor %}
 
 <!-- End Page Content -->
 
 
-
 <!-- Image of location/map-->
-
 
 
 <!--Endereço-->
 
-<div class="w3-black w3-center " id="localizacao">
-  <h2 class="w3-wide w3-center">Endereço</h2>
+<div class="anchor-link w3-black w3-center " id="localizacao">
+    <h2 class="w3-wide w3-center">Endereço</h2>
     <p class="w3-opacity w3-center"><i>Av. Iguape, 848 <br>
-      Jardim Satélite, São José dos Campos - SP, <br>
-      12230-720<br><br> </i></p>
+        Jardim Satélite, São José dos Campos - SP, <br>
+        12230-720<br><br> </i></p>
 </div>
 <div class="row d-flex justify-content-center">
 
-     <iframe class="col-lg-6 col-md-6 col-sm-6" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3666.227970501322!2d-45.893675776174646!3d-23.234789936375716!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cc4be101e3cae1%3A0x19598f907e66b65b!2sASPECTOS%20BARBEARIA%20%7C%20IMAGEM%20MASCULINA!5e0!3m2!1spt-BR!2sbr!4v1661262856454!5m2!1spt-BR!2sbr"
-          width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <iframe class="col-lg-6 col-md-6 col-sm-6"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3666.227970501322!2d-45.893675776174646!3d-23.234789936375716!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cc4be101e3cae1%3A0x19598f907e66b65b!2sASPECTOS%20BARBEARIA%20%7C%20IMAGEM%20MASCULINA!5e0!3m2!1spt-BR!2sbr!4v1661262856454!5m2!1spt-BR!2sbr"
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
 
 </div>
 
 </div>
 <!-- Footer -->
 <footer class="w3-container  w3-padding-8 w3-center w3-opacity w3-light-grey w3-xlarge">
-  <a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook-official w3-hover-opacity"></i></a>
-  <a href="https://www.instagram.com/aspectussalon/" target="_blank"><i class=" fa fa-instagram w3-hover-opacity" > </i></a>
+    <a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook-official w3-hover-opacity"></i></a>
+    <a href="https://www.instagram.com/aspectussalon/" target="_blank"><i
+            class=" fa fa-instagram w3-hover-opacity"> </i></a>
 
-  <p class="w3-medium w3-content ">Feito por: <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">AMG&ED</a></p>
+    <p class="w3-medium w3-content ">Feito por: <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">AMG&ED</a>
+    </p>
 
 
 </footer>
 <a href="https://api.whatsapp.com/send?phone=5512982853401&text=Olá! Gostaria de marcar um horario"
-    target="_blank"
-    style="position:fixed;bottom:20px;right:30px;">
-    <svg enable-background="new 0 0 512 512" width="50" height="50" version="1.1" viewBox="0 0 512 512" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><path d="M256.064,0h-0.128l0,0C114.784,0,0,114.816,0,256c0,56,18.048,107.904,48.736,150.048l-31.904,95.104  l98.4-31.456C155.712,496.512,204,512,256.064,512C397.216,512,512,397.152,512,256S397.216,0,256.064,0z" fill="#4CAF50"/><path d="m405.02 361.5c-6.176 17.44-30.688 31.904-50.24 36.128-13.376 2.848-30.848 5.12-89.664-19.264-75.232-31.168-123.68-107.62-127.46-112.58-3.616-4.96-30.4-40.48-30.4-77.216s18.656-54.624 26.176-62.304c6.176-6.304 16.384-9.184 26.176-9.184 3.168 0 6.016 0.16 8.576 0.288 7.52 0.32 11.296 0.768 16.256 12.64 6.176 14.88 21.216 51.616 23.008 55.392 1.824 3.776 3.648 8.896 1.088 13.856-2.4 5.12-4.512 7.392-8.288 11.744s-7.36 7.68-11.136 12.352c-3.456 4.064-7.36 8.416-3.008 15.936 4.352 7.36 19.392 31.904 41.536 51.616 28.576 25.44 51.744 33.568 60.032 37.024 6.176 2.56 13.536 1.952 18.048-2.848 5.728-6.176 12.8-16.416 20-26.496 5.12-7.232 11.584-8.128 18.368-5.568 6.912 2.4 43.488 20.48 51.008 24.224 7.52 3.776 12.48 5.568 14.304 8.736 1.792 3.168 1.792 18.048-4.384 35.52z" fill="#FAFAFA"/></svg>
+   target="_blank"
+   style="position:fixed;bottom:20px;right:30px; z-index:10">
+    <svg enable-background="new 0 0 512 512" width="50" height="50" version="1.1" viewBox="0 0 512 512"
+         xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><path d="M256.064,0h-0.128l0,0C114.784,0,0,114.816,0,256c0,56,18.048,107.904,48.736,150.048l-31.904,95.104  l98.4-31.456C155.712,496.512,204,512,256.064,512C397.216,512,512,397.152,512,256S397.216,0,256.064,0z" fill="#4CAF50"/>
+        <path d="m405.02 361.5c-6.176 17.44-30.688 31.904-50.24 36.128-13.376 2.848-30.848 5.12-89.664-19.264-75.232-31.168-123.68-107.62-127.46-112.58-3.616-4.96-30.4-40.48-30.4-77.216s18.656-54.624 26.176-62.304c6.176-6.304 16.384-9.184 26.176-9.184 3.168 0 6.016 0.16 8.576 0.288 7.52 0.32 11.296 0.768 16.256 12.64 6.176 14.88 21.216 51.616 23.008 55.392 1.824 3.776 3.648 8.896 1.088 13.856-2.4 5.12-4.512 7.392-8.288 11.744s-7.36 7.68-11.136 12.352c-3.456 4.064-7.36 8.416-3.008 15.936 4.352 7.36 19.392 31.904 41.536 51.616 28.576 25.44 51.744 33.568 60.032 37.024 6.176 2.56 13.536 1.952 18.048-2.848 5.728-6.176 12.8-16.416 20-26.496 5.12-7.232 11.584-8.128 18.368-5.568 6.912 2.4 43.488 20.48 51.008 24.224 7.52 3.776 12.48 5.568 14.304 8.736 1.792 3.168 1.792 18.048-4.384 35.52z"
+              fill="#FAFAFA"/></svg>
 </a>
-<script>
-// Automatic Slideshow - change image every 6 seconds
-var myIndex = 0;
-carousel();
+<script src="{% static 'js/carrocel.js' %}">
 
-function carousel() {
-  var i;
-  var x = document.getElementsByClassName("mySlides");
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";
-  }
-  myIndex++;
-  if (myIndex > x.length) {myIndex = 1}
-  x[myIndex-1].style.display = "block";
-  setTimeout(carousel, 6000);
-}
-
-// Used to toggle the menu on small screens when clicking on the menu button
-function myFunction() {
-  var x = document.getElementById("navDemo");
-  if (x.className.indexOf("w3-show") == -1) {
-    x.className += " w3-show";
-  } else {
-    x.className = x.className.replace(" w3-show", "");
-  }
-}
-
-// When the user clicks anywhere outside of the modal, close it
-var modal = document.getElementById('ticketModal');
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
 </script>
 
 <!------ Script Carrocel Body ---------->
 
-<script language="javascript">
-$('#myCarousel').on('slide.bs.carousel', function (e) {
+<script src="{% static 'js/carrocel1_temporizador.js' %}">
 
-
-    var $e = $(e.relatedTarget);
-    var idx = $e.index();
-    var itemsPerSlide = 4;
-    var totalItems = $('.carousel-item').length;
-
-    if (idx >= totalItems-(itemsPerSlide-1)) {
-        var it = itemsPerSlide - (totalItems - idx);
-        for (var i=0; i<it; i++) {
-            // append slides to end
-            if (e.direction=="left") {
-                $('.carousel-item').eq(i).appendTo('.carousel-inner');
-            }
-            else {
-                $('.carousel-item').eq(0).appendTo('.carousel-inner');
-            }
-        }
-    }
-});
-
-
-  $('#myCarousel').carousel({
-                interval: 2000
-        });
-
-
-  $(document).ready(function() {
-/* show lightbox when clicking a thumbnail */
-    $('a.thumb').click(function(event){
-      event.preventDefault();
-      var content = $('.modal-body');
-      content.empty();
-        var title = $(this).attr("title");
-        $('.modal-title').html(title);
-        content.html($(this).html());
-        $(".modal-profile").modal({show:true});
-    });
-
-  });
-  </script>
+</script>
 
 </body>
 </html>
